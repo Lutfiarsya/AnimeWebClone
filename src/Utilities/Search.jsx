@@ -1,5 +1,9 @@
 import { MagnifyingGlass } from "phosphor-react"
-const Search = () => {
+
+
+const Search = ({keyword : id}) => {
+
+
     return(
         <div className="mr-4 flex flex-row">
             <input 
