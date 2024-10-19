@@ -13,7 +13,7 @@ const Rating = ({rate}) => {
          console.log(totalRate)
     }
         return(
-            <div className="flex flex-row mt-20 space-x-2">
+            <div className="flex flex-row mt-6 space-x-2">
                 {element}
             </div>
         )

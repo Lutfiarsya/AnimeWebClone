@@ -30,7 +30,7 @@ console.log(details?.data?.trailer?.url)
     return(
         <div>
             {details && (
-                <div key={details.data.mal_id}>
+                <div key={details?.data?.mal_id}>
                     <div className="text-white flex flex-row w-full h-full">
                         <div className="w-[30%] flex items-center justify-center p-8">
                         <img src={details.data?.images.webp.image_url}
@@ -40,7 +40,7 @@ console.log(details?.data?.trailer?.url)
                         />
                         </div>
                         <div className="w-[70%] flex flex-col m-auto">
-                            <h1 className="text-5xl font-bold overflow-hidden absolute top-32">{details.data?.title}</h1>
+                            <h1 className="text-5xl font-bold overflow-hidden">{details.data?.title}</h1>
                             <Rating rate={details.data?.score}/>
                             <div className="w-[80%]">
                             <p className="text-md mt-8">{details.data?.synopsis}</p>

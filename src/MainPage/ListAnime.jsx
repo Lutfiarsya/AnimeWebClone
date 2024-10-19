@@ -4,13 +4,14 @@ import AnimeDetails from "../pages/AnimeDetails"
 import { DataApi } from "../Apicall/Api"
 
 
-const GetTopAnime = ({ApiAnime, AnimeRecommendations, HomePage, setLoading, Page}) => {
+const GetTopAnime = ({ApiAnime, AnimeRecommendations, HomePage, setLoading, Page, searchQuery}) => {
 const [items, setItems] = useState(null)
 const [error, setError] = useState(null)
-const [keyword, setKeyword] = useState(false)
+
 
 
 useEffect(() => {
+    setItems() // untuk me reset setiap render
         const fetchData = async() => {  
             try{
                 const response = await fetch(ApiAnime)
@@ -27,7 +28,7 @@ useEffect(() => {
             }
         }
         fetchData()
-    },[Page])
+    },[Page, searchQuery])
 
 
  

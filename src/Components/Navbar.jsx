@@ -1,7 +1,7 @@
 import Search from "../Utilities/Search";
 import { Navigate, useNavigate } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = ({keyword, setKeyword}) => {
 
     const Navigate = useNavigate()
 
@@ -16,7 +16,7 @@ const Navbar = () => {
                 <a href="#" className="text-lg text-white">Anime list</a>
                 <a href="#" className="text-lg text-white" >Genre list</a>
             </div>
-            <Search />
+            <Search keyword={keyword} setKeyword={setKeyword}/>
         </div>
     )
 }

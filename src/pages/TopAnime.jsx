@@ -7,7 +7,6 @@ const TopAnime = ({setLoading}) => {
 const[page, setPage] = useState(1)
 const[topAnime, setTopAnime] = useState([])
 const Api = DataApi('top/anime', `page=${page}`)
-console.log(Api)
     return(
         <div className="w-full">
             <div className="flex mt-8 ">

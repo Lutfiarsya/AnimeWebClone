@@ -6,12 +6,14 @@ import { useState } from "react";
 import Loading from "./Utilities/Loading";
 import AnimeDetails from "./pages/AnimeDetails";
 import NotFound from "./pages/Notfound";
+import SearchPage from "./pages/SearchPage";
 
 
 
 
 function App() {
   const[loading, setLoading] = useState(false)
+  
 
   return (
     <>
@@ -28,9 +30,9 @@ function App() {
         <Routes>
             <Route path="/" element={<Home setLoading={setLoading}/>} />
             <Route path="/TopAnime" element={<TopAnime setLoading={setLoading}/>} />
-            <Route path="/Search/:keyword" element={<searchResult/>}/>
             <Route path="/anime/:id" element={<AnimeDetails/>}></Route>
             <Route path="/*" element={<NotFound/>}></Route>
+            <Route path="/anime" element={<SearchPage/>}></Route>
         </Routes>
         </div>
         }
