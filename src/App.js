@@ -1,5 +1,4 @@
 import { Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
 import TopAnime from "./pages/TopAnime";
 import Navbar from "./Components/Navbar";
 import { useState } from "react";
@@ -7,6 +6,9 @@ import Loading from "./Utilities/Loading";
 import AnimeDetails from "./pages/AnimeDetails";
 import NotFound from "./pages/Notfound";
 import SearchPage from "./pages/SearchPage";
+import Anime from "./pages/Anime";
+import Home from "./pages/Home";
+import About from "./pages/About";
 
 
 
@@ -28,10 +30,12 @@ function App() {
         {loading ? <Loading/> : 
         <div>
         <Routes>
-            <Route path="/" element={<Home setLoading={setLoading}/>} />
+            <Route path="/" element={<Home />} />
+            <Route path="/explore" element={<Anime setLoading={setLoading}/>} />
             <Route path="/TopAnime" element={<TopAnime setLoading={setLoading}/>} />
             <Route path="/anime/:id" element={<AnimeDetails/>}></Route>
             <Route path="/*" element={<NotFound/>}></Route>
+            <Route path="/about" element={<About/>}></Route>
             <Route path="/anime" element={<SearchPage/>}></Route>
         </Routes>
         </div>
