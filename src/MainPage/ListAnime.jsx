@@ -62,6 +62,7 @@ const GetTopAnime = ({ ApiAnime, AnimeRecommendations, HomePage, setLoading, Pag
             gap-y-6 gap-x-4 
             my-4 
             overflow-hidden
+            py-6
           "
         >
           {page?.map((anime) => {
@@ -150,7 +151,7 @@ const GetTopAnime = ({ ApiAnime, AnimeRecommendations, HomePage, setLoading, Pag
                   >
                     <h1
                       className="text-lg sm:text-xl font-['Exo_2'] font-bold text-white text-center line-clamp-2
-                                 group-hover:text-black transition-colors duration-300"
+                      group-hover:text-blue-500 transition-colors duration-300"
                     >
                       {title}
                     </h1>

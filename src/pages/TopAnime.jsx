@@ -8,7 +8,7 @@ const[page, setPage] = useState(1)
 const[topAnime, setTopAnime] = useState([])
 const Api = DataApi('top/anime', `page=${page}`)
     return(
-        <div className="w-full">
+        <div className="w-full h-full">
             <div className="flex mt-8 ">
             <h1 className="text-white font-bold text-4xl m-auto overflow-hidden">TOP ANIME</h1>
             </div>

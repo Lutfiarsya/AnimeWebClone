@@ -10,7 +10,7 @@ const Anime = ({ setLoading, loading }) => {
   return (
     <div className="flex flex-col min-h-screen bg-[--MainBg] text-white">
       {/* Section Top Anime */}
-      <section className="px-2 sm:px-4 md:px-6 lg:px-12 py-6">
+      <section className="px-2 sm:px-4 md:px-6 lg:px-12 ">
         <Header 
           title={'Top Anime'} 
           LinkTarget={'TopAnime'} 
@@ -25,7 +25,7 @@ const Anime = ({ setLoading, loading }) => {
       </section>
 
       {/* Section Recommendations */}
-      <section className="px-2 sm:px-4 md:px-6 lg:px-12 py-6">
+      <section className="px-2 sm:px-4 md:px-6 lg:px-12">
         <Header title={'Recommendations Anime'} />
         <ListAnime 
           ApiAnime={GetRecommendedAnime} 
