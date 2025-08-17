@@ -9,7 +9,7 @@ const Home = () => {
   return (
     <>
       <div className="w-full relative h-screen flex flex-col justify-center items-center homePage">
-        <div className="relative z-10 flex h-full w-full flex-col justify-center items-center">
+        <div className="relative z-10 flex h-full md:text-start text-center w-full flex-col justify-center items-center">
           <motion.h2
             initial={{ y: -100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
