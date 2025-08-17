@@ -7,9 +7,9 @@ import Rating from "../Utilities/Rating"
 
 const AnimeDetails = () => {
 const { id } = useParams()
+const idUrl = id.split('').slice(0, id.indexOf('-')).join('')
 const [details, setDetails] = useState(null)
-const url = DataApi(`anime/${id}`)
-
+const url = DataApi(`anime/${id.includes('-') ? idUrl : id}`)
 
 useEffect(() => {
     const fetchData = async() => {
