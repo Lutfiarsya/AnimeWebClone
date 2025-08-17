@@ -31,7 +31,7 @@ console.log(details?.data?.trailer?.url)
         <div>
             {details && (
                 <div key={details?.data?.mal_id}>
-                    <div className="text-white flex flex-row w-full h-full">
+                    <div className="text-white flex flex-row w-full h-full mt-20">
                         <div className="w-[30%] flex items-center justify-center p-8">
                         <img src={details.data?.images.webp.image_url}
                              width={300}
