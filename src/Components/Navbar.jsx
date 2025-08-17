@@ -69,7 +69,6 @@ const Navbar = ({ keyword, setKeyword }) => {
             About
           </NavLink>
         </div>
-        {/* Burger Menu */}
         <div className="lg:hidden ">
           {!isOpen ? 
             <Menu 
@@ -94,7 +93,7 @@ const Navbar = ({ keyword, setKeyword }) => {
                       ${isOpen 
                         ? 'translate-y-0 opacity-100 visible' 
                         : '-translate-y-full opacity-0 invisible'
-                      } z-10`}>
+                      } z-40`}>
         <div className="flex flex-col bg-gradient-to-b from-[--SecondColor] to-[--SecondColor]/95">
           <NavLink 
             to="/" 
