@@ -1,5 +1,6 @@
 import { allAnime } from "../Apicall/Api";
 import { useState, useEffect } from "react";
+import NotFound from "./Notfound";
 const GenrePage = () => {
     const [genres, setGenres] = useState([])
     const [dataAnime, setDataAnime] = useState([])
@@ -20,13 +21,7 @@ const GenrePage = () => {
     
     return(
         <div>
-            {genres.data?.map((items) => {
-                return(
-                    <div>
-                        <h2>{items.name}</h2>
-                    </div>
-                )
-            })}
+            <NotFound/>
         </div>
 
     )
