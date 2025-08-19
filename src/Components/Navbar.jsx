@@ -20,13 +20,14 @@ const Navbar = ({ keyword, setKeyword }) => {
      after:origin-center hover:after:w-full`
 
   const mobileNavLinkClass = ({ isActive }) =>
-    `block text-lg text-white px-6 py-4 transition-all duration-300 hover:bg-white/15  hover:pl-8
+    `block text-lg text-white px-6 py-4 transition-all duration-300 hover:bg-white/15 hover:pl-8
      ${isActive ? "font-semibold bg-white/10 border-r-4 border-white" : ""}
      transform hover:translate-x-1 border-b border-white/5 last:border-b-0`
 
   return (
     <>
-      <div className="sm:fixed relative top-0 left-0 flex w-full h-[60px] sm:h-[70px] bg-[--SecondColor] md:z-20 sm:z-50 justify-between items-center px-3  sm:px-4 lg:px-6">
+      {/* Main Navbar */}
+      <div className="fixed top-0 left-0 w-full h-[60px] sm:h-[70px] bg-[--SecondColor] z-50 flex justify-between items-center px-3 sm:px-4 lg:px-6">
         <h1
           className="font-bold text-white text-lg sm:text-xl lg:text-2xl font-['lexend'] hover:cursor-pointer transition-all duration-200 hover:scale-105"
           onClick={handleClick}
@@ -35,6 +36,7 @@ const Navbar = ({ keyword, setKeyword }) => {
           <span className="sm:hidden">MAL</span>
         </h1>
 
+        {/* Desktop Navigation */}
         <div className="hidden lg:flex w-auto xl:w-[40%] flex-row justify-center xl:justify-between gap-2 xl:gap-0 px-4">
           <NavLink to="/" className={navLinkClass}>
             Home
@@ -50,50 +52,23 @@ const Navbar = ({ keyword, setKeyword }) => {
           </NavLink>
         </div>
 
-        <div className="hidden lg:block">
-          <Search keyword={keyword} setKeyword={setKeyword} />
-        </div>
-
-        <div className="hidden md:flex lg:hidden flex-row gap-1 z-10">
-          <NavLink to="/" className={navLinkClass}>
-            Home
-          </NavLink>
-          <NavLink to="/explore" className={navLinkClass}>
-            Explore
-          </NavLink>
-          <NavLink to="/genreList" className={navLinkClass}>
-            <span className="hidden xl:inline">Genre List</span>
-            <span className="xl:hidden">Genres</span>
-          </NavLink>
-          <NavLink to="/about" className={navLinkClass}>
-            About
-          </NavLink>
-        </div>
-        <div className="lg:hidden ">
-          {!isOpen ? 
-            <Menu 
-              onClick={() => setIsOpen(!isOpen)} 
-              className="text-white p-2 hover:bg-white/10 rounded-lg transition-all duration-300 
-                         transform hover:scale-110 active:scale-95"
-              size={40}
-            /> : 
-            <X 
-              onClick={() => setIsOpen(!isOpen)} 
-              className="text-white p-2 hover:bg-white/10 rounded-lg transition-all duration-300 
-                         transform hover:scale-110 active:scale-95"
-              size={40}
-            />
-          }
-        </div>
+        {/* Mobile Menu Button */}
+        <button 
+          onClick={() => setIsOpen(!isOpen)} 
+          className="lg:hidden text-white p-2 hover:bg-white/10 rounded-lg transition-all duration-300 transform hover:scale-110 active:scale-95"
+        >
+          {isOpen ? <X size={40} /> : <Menu size={40} />}
+        </button>
       </div>
 
-      <div className={`sm:fixed relative top-[60px] sm:top-[70px] left-0 w-full bg-[--SecondColor] 
-                      lg:hidden shadow-xl border-t border-white/10
-                      transform transition-all duration-300 ease-in-out backdrop-blur-sm
+      {/* Mobile Navigation Menu */}
+      <div className={`fixed top-[60px] sm:top-[70px] left-0 w-full bg-[--SecondColor] 
+                      lg:hidden shadow-xl border-t border-white/10 z-40
+                      transform transition-all duration-300 ease-in-out
                       ${isOpen 
                         ? 'translate-y-0 opacity-100 visible' 
                         : '-translate-y-full opacity-0 invisible'
-                      } z-40`}>
+                      }`}>
         <div className="flex flex-col bg-gradient-to-b from-[--SecondColor] to-[--SecondColor]/95">
           <NavLink 
             to="/" 
@@ -114,7 +89,7 @@ const Navbar = ({ keyword, setKeyword }) => {
             </span>
           </NavLink>
           <NavLink 
-            to="/genreList" 
+            to="/genre" 
             className={mobileNavLinkClass} 
             onClick={() => setIsOpen(false)}
           >
@@ -132,6 +107,7 @@ const Navbar = ({ keyword, setKeyword }) => {
             </span>
           </NavLink>
 
+          {/* Search Section */}
           <div className="w-full px-6 py-6 border-t border-white/20 bg-white/5 backdrop-blur-sm">
             <div className="mb-2 text-white/70 text-sm font-medium">Search Anime</div>
             <Search keyword={keyword} setKeyword={setKeyword} />
@@ -139,9 +115,10 @@ const Navbar = ({ keyword, setKeyword }) => {
         </div>
       </div>
 
+      {/* Mobile Overlay */}
       {isOpen && (
         <div 
-          className="fixed inset-0 bg-black/20 backdrop-blur-sm z-0 lg:hidden"
+          className="fixed inset-0 bg-black/20 backdrop-blur-sm z-30 lg:hidden"
           onClick={() => setIsOpen(false)}
         />
       )}
