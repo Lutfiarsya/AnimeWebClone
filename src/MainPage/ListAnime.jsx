@@ -7,7 +7,7 @@ const GetTopAnime = ({ ApiAnime, AnimeRecommendations, HomePage, setLoading, Pag
   const [error, setError] = useState(null)
 
   useEffect(() => {
-    setItems(null) // reset data tiap render
+    setItems(null) 
     const fetchData = async () => {
       try {
         const response = await fetch(ApiAnime)
@@ -55,11 +55,9 @@ const GetTopAnime = ({ ApiAnime, AnimeRecommendations, HomePage, setLoading, Pag
           animate="show"
           className="
             grid 
-            grid-cols-1 
-            sm:grid-cols-2 
-            md:grid-cols-3 
+            grid-cols-2
             lg:grid-cols-4 
-            gap-y-6 gap-x-4 
+            lg:gap-y-6 lg:gap-x-4 gap-4 
             my-4 
             overflow-hidden
             py-6
@@ -70,7 +68,6 @@ const GetTopAnime = ({ ApiAnime, AnimeRecommendations, HomePage, setLoading, Pag
             const Images = AnimeRecommendations
               ? anime.entry[0].images?.webp.image_url
               : anime.images?.webp.image_url
-
             return (
               <motion.div
                 key={anime.mal_id}
@@ -85,7 +82,7 @@ const GetTopAnime = ({ ApiAnime, AnimeRecommendations, HomePage, setLoading, Pag
                     group mt-6 relative flex flex-col items-center 
                     shadow-md rounded-md overflow-hidden
                     py-3 
-                    w-64 sm:w-72 h-[380px] sm:h-[450px] 
+                    lg:w-72 w-48 h-[250px] lg:h-[450px] 
                     m-auto bg-[--CardColor]
                     before:absolute before:inset-0 before:bg-gradient-to-r 
                     before:from-transparent before:via-white/5 before:to-transparent
@@ -137,9 +134,7 @@ const GetTopAnime = ({ ApiAnime, AnimeRecommendations, HomePage, setLoading, Pag
                     <img
                       src={Images}
                       alt={title}
-                      width={250}
-                      height={250}
-                      className="m-auto object-cover rounded-md"
+                      className="m-auto object-cover rounded-md lg:w-[250px] w-[150px] h-[200px] lg:h-[350px]"
                     />
                   </div>
 
@@ -149,12 +144,12 @@ const GetTopAnime = ({ ApiAnime, AnimeRecommendations, HomePage, setLoading, Pag
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.1 }}
                   >
-                    <h1
-                      className="text-lg sm:text-xl font-['Exo_2'] font-bold text-white text-center line-clamp-2
+                    <h2
+                      className="lg:text-lg text-xs font-['Exo_2'] font-bold text-white text-center line-clamp-2
                       group-hover:text-blue-500 transition-colors duration-300"
                     >
                       {title}
-                    </h1>
+                    </h2>
                   </motion.div>
                 </motion.button>
               </motion.div>

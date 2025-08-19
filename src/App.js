@@ -9,6 +9,8 @@ import SearchPage from "./pages/SearchPage";
 import Anime from "./pages/Anime";
 import Home from "./pages/Home";
 import About from "./pages/About";
+import EpisodesById from "./pages/EpisodesById";
+import GenrePage from "./pages/GenrePage";
 
 
 
@@ -37,6 +39,8 @@ function App() {
             <Route path="/*" element={<NotFound/>}></Route>
             <Route path="/about" element={<About/>}></Route>
             <Route path="/anime" element={<SearchPage/>}></Route>
+            <Route path="/anime/:id/episodes/:episodeId" element={<EpisodesById/>}></Route>
+            <Route path="/genre" element={<GenrePage/>}/>
         </Routes>
         </div>
         }
