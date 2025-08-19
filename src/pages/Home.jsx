@@ -14,7 +14,7 @@ const Home = () => {
             initial={{ y: -100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="font-semibold lg:md:text-7xl sm:text-2xl overflow-hidden text-white"
+            className="font-semibold text-5xl overflow-hidden text-white"
           >
             Welcome to{" "}
             <motion.span
@@ -31,7 +31,7 @@ const Home = () => {
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
-            className="text-normal text-white lg:md:text-md sm:text-sm mt-2"
+            className="text-white lg:md:text-xl text-xs mt-2"
           >
             Sebuah platform untuk mengelola dan menemukan anime
           </motion.p>
