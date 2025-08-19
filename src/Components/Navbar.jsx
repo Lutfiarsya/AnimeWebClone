@@ -26,7 +26,7 @@ const Navbar = ({ keyword, setKeyword }) => {
 
   return (
     <>
-      <div className="fixed top-0 left-0 flex w-full h-[60px] sm:h-[70px] bg-[--SecondColor] z-20 justify-between items-center px-3 sm:px-4 lg:px-6">
+      <div className="sm:fixed relative top-0 left-0 flex w-full h-[60px] sm:h-[70px] bg-[--SecondColor] md:z-20 sm:z-50 justify-between items-center px-3  sm:px-4 lg:px-6">
         <h1
           className="font-bold text-white text-lg sm:text-xl lg:text-2xl font-['lexend'] hover:cursor-pointer transition-all duration-200 hover:scale-105"
           onClick={handleClick}
@@ -42,7 +42,7 @@ const Navbar = ({ keyword, setKeyword }) => {
           <NavLink to="/explore" className={navLinkClass}>
             Explore
           </NavLink>
-          <NavLink to="/genreList" className={navLinkClass}>
+          <NavLink to="/genre" className={navLinkClass}>
             Genre List
           </NavLink>
           <NavLink to="/about" className={navLinkClass}>
@@ -87,7 +87,7 @@ const Navbar = ({ keyword, setKeyword }) => {
         </div>
       </div>
 
-      <div className={`fixed top-[60px] sm:top-[70px] left-0 w-full bg-[--SecondColor] 
+      <div className={`sm:fixed relative top-[60px] sm:top-[70px] left-0 w-full bg-[--SecondColor] 
                       lg:hidden shadow-xl border-t border-white/10
                       transform transition-all duration-300 ease-in-out backdrop-blur-sm
                       ${isOpen 

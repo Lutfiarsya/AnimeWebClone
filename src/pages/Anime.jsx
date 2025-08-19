@@ -8,7 +8,7 @@ const Anime = ({ setLoading, loading }) => {
   const GetRecommendedAnime = DataApi('recommendations/anime')
 
   return (
-    <div className="flex flex-col min-h-screen bg-[--MainBg] text-white">
+    <div className="flex flex-col min-h-screen bg-[--MainBg] text-white md:mt-10">
       {/* Section Top Anime */}
       <section className="px-2 sm:px-4 md:px-6 lg:px-12 ">
         <Header 
